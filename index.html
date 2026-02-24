@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/meico.ico" type="image/ico">
+  <title>MAHA</title>
+  <meta name="description" content="Portfolio de Ayman: proyectos, habilidades y contacto." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body id="top">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="dot"></span>
+        <span class="brand__text" data-i18n="brand.name">Ayman</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav" aria-label="Primary">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="cv.html" data-i18n="nav.resume">Resume</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="controls">
+        <select id="langSelect" class="select" aria-label="Language">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+
+        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+          <span class="hide-sm" data-i18n="ui.theme">Theme</span>
+        </button>
+
+        <!-- Mobile menu button (only on small screens) -->
+        <button id="menuToggle" class="btn btn--ghost menu" type="button" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="navBackdrop" class="backdrop" hidden></div>
+    <aside id="mobileNav" class="mobile-nav" hidden aria-label="Mobile navigation">
+      <div class="mobile-nav__top">
+        <span class="mobile-nav__title" data-i18n="nav.menu">Menu</span>
+        <button id="menuClose" class="btn btn--ghost" type="button" aria-label="Close menu">✕</button>
+      </div>
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="cv.html" data-i18n="nav.resume">Resume</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </aside>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__text">
+        <h1 class="title" data-i18n="hero.title">Hi, I’m Ayman Hatim Aarab</h1>
+
+        <p class="subline">
+          <span class="role" data-i18n="hero.role">Web Development Student</span>
+        </p>
+
+        <p class="lead" data-i18n="hero.lead">
+          I build clean web pages and Python projects while learning every day.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn--primary" href="#projects">
+            <span data-i18n="hero.ctaWork">View My Work</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" id="btnResume">
+            <span class="ic" aria-hidden="true">⬇</span>
+            <span data-i18n="hero.ctaResume">Resume</span>
+          </a>
+        </div>
+
+        <!-- Social icons row (GitHub, LinkedIn, Mail, Phone) -->
+        <div class="social">
+          <a class="iconbtn" id="btnGithub" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <span class="iconbtn__ic" aria-hidden="true">
+              <!-- GitHub icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 .5C5.73.5.75 5.6.75 12c0 5.18 3.44 9.57 8.2 11.12.6.12.82-.27.82-.6 0-.3-.01-1.1-.02-2.16-3.34.75-4.04-1.65-4.04-1.65-.55-1.43-1.35-1.81-1.35-1.81-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.66-.31-5.46-1.36-5.46-6.07 0-1.34.46-2.44 1.22-3.3-.12-.31-.53-1.57.12-3.26 0 0 1-.33 3.3 1.26.96-.27 1.98-.41 3-.42 1.02.01 2.04.15 3 .42 2.3-1.59 3.3-1.26 3.3-1.26.65 1.69.24 2.95.12 3.26.76.86 1.22 1.96 1.22 3.3 0 4.72-2.8 5.76-5.47 6.07.43.38.81 1.14.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.73.83.6 4.75-1.55 8.19-5.94 8.19-11.12C23.25 5.6 18.27.5 12 .5Z"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="iconbtn" id="btnLinkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <span class="iconbtn__ic" aria-hidden="true">
+              <!-- LinkedIn icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5S3.88 7.5 4.98 7.5 7 6.6 7 5.5 6.08 3.5 4.98 3.5ZM3.5 21h3V9h-3v12ZM9 9h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56C17.86 9 19 10.36 19 13.2V21h-3v-7c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72V21H9V9Z"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="iconbtn" id="btnEmail" aria-label="Email">
+            <span class="iconbtn__ic" aria-hidden="true">
+              <!-- Mail icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="iconbtn" id="btnPhone" aria-label="Phone">
+            <span class="iconbtn__ic" aria-hidden="true">
+              <!-- Phone icon -->
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="meta">
+          <span class="pill" data-i18n="hero.location">Granada, Spain</span>
+          <span class="pill" data-i18n="hero.status">Open to internships / junior roles</span>
+        </div>
+      </div>
+
+      <div class="hero__side">
+        <div class="hero__photo" aria-label="Profile photo">
+          <img src="assets/img/me.jpg" alt="Photo of Ayman" />
+        </div>
+
+        <div class="card">
+          <h2 class="card__title" data-i18n="hero.highlightsTitle">Highlights</h2>
+          <ul class="bullets" id="highlightsList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section__head">
+        <h2 data-i18n="about.title">About</h2>
+        <p class="muted" data-i18n="about.subtitle">A quick intro and what I’m focused on.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <p class="muted" data-i18n="about.body">
+            I’m a web development student passionate about learning. I enjoy building projects with HTML, CSS, Python and SQL.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="h3" data-i18n="about.nowTitle">Right now</h3>
+          <ul class="bullets" id="nowList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section__head">
+        <h2 data-i18n="projects.title">Featured Projects</h2>
+        <p class="muted" data-i18n="projects.subtitle">A few projects I’m proud of.</p>
+      </div>
+      <div class="projects" id="projectsGrid"></div>
+    </section>
+
+    <!-- SKILLS (tabs + chips like example) -->
+    <section class="section" id="skills">
+      <div class="section__head section__head--center">
+        <h2 data-i18n="skills.title">Technical Skills</h2>
+        <p class="muted" data-i18n="skills.subtitle">My expertise across various technologies and tools.</p>
+      </div>
+
+      <div class="tabs card tabs-card">
+        <div class="tabs__bar" id="skillsTabs"></div>
+        <div class="tabs__panel" id="skillsChips"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER like example -->
+    <footer class="footer2">
+      <div class="container footer2__grid">
+        <div class="footer2__col">
+          <div class="footer2__brand" data-i18n="brand.fullname">Ayman Hatim Aarab</div>
+          <div class="footer2__muted" data-i18n="footer.bio">
+            Web development student focused on modern, clean websites and Python projects.
+          </div>
+        </div>
+
+        <div class="footer2__col">
+          <div class="footer2__title" data-i18n="footer.quick">Quick Links</div>
+          <div class="footer2__links">
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+            <a href="cv.html" data-i18n="nav.resume">Resume</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer2__col">
+          <div class="footer2__title" data-i18n="footer.connect">Connect</div>
+          <div class="footer2__icons">
+            <a class="iconbtn" id="footerGithub" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <span class="iconbtn__ic" aria-hidden="true">🐙</span>
+            </a>
+            <a class="iconbtn" id="footerLinkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <span class="iconbtn__ic" aria-hidden="true">in</span>
+            </a>
+            <a class="iconbtn" id="footerEmail" aria-label="Email">
+              <span class="iconbtn__ic" aria-hidden="true">✉</span>
+            </a>
+            <a class="iconbtn" id="footerPhone" aria-label="Phone">
+              <span class="iconbtn__ic" aria-hidden="true">☎</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer2__col">
+          <div class="footer2__title" data-i18n="footer.shortcuts">Shortcuts</div>
+          <div class="footer2__muted">
+            <div><span class="kbd">T</span> <span data-i18n="footer.shortTheme">Toggle theme</span></div>
+            <div><span class="kbd">L</span> <span data-i18n="footer.shortLang">Change language</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer2__bottom">
+        <span class="footer2__muted">© <span id="year"></span> <span data-i18n="brand.name">Ayman</span></span>
+        <span class="footer2__muted" data-i18n="footer.built">Built with HTML/CSS/JS</span>
+      </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="toTop" class="totop" type="button" aria-label="Back to top">↑</button>
+  </main>
+
+  <script src="js/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
