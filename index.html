@@ -3,244 +3,271 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="assets/img/meico.ico" type="image/ico">
-  <title>MAHA</title>
-  <meta name="description" content="Portfolio de Ayman: proyectos, habilidades y contacto." />
+  <link rel="icon" href="assets/img/meico.ico" type="image/x-icon">
+  <title>Ayman Hatim Aarab — Desarrollador Web & Python</title>
+  <meta name="description" content="Portfolio profesional de Ayman Hatim Aarab: proyectos en producción, aplicaciones Python, arquitectura web limpia y diseño accesible." />
+  
+  <!-- Preconnect and fonts for refined typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body id="top">
-  <header class="header">
+  <!-- Skip to main content link for WCAG AA accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="dot"></span>
+      <a class="brand" href="index.html" aria-label="Ayman Hatim Aarab — Inicio">
+        <span class="dot" aria-hidden="true"></span>
         <span class="brand__text" data-i18n="brand.name">Ayman</span>
       </a>
 
       <!-- Desktop nav -->
-      <nav class="nav" aria-label="Primary">
-        <a href="#home" data-i18n="nav.home">Home</a>
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#skills" data-i18n="nav.skills">Skills</a>
-        <a href="cv.html" data-i18n="nav.resume">Resume</a>
-        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#home" data-i18n="nav.home">Inicio</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+        <a href="cv.html" data-i18n="nav.resume">CV</a>
+        <a href="contact.html" data-i18n="nav.contact">Contacto</a>
       </nav>
 
       <div class="controls">
-        <select id="langSelect" class="select" aria-label="Language">
+        <label for="langSelect" class="sr-only">Seleccionar idioma</label>
+        <select id="langSelect" class="select" aria-label="Seleccionar idioma">
           <option value="es">ES</option>
           <option value="en">EN</option>
           <option value="fr">FR</option>
         </select>
 
-        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+        <button id="themeToggle" class="btn btn--ghost theme-btn" type="button" aria-label="Alternar tema claro y oscuro">
           <span class="icon" aria-hidden="true">☾</span>
-          <span class="hide-sm" data-i18n="ui.theme">Theme</span>
+          <span class="hide-sm" data-i18n="ui.theme">Tema</span>
         </button>
 
-        <!-- Mobile menu button (only on small screens) -->
-        <button id="menuToggle" class="btn btn--ghost menu" type="button" aria-label="Toggle menu">☰</button>
+        <!-- Mobile menu button -->
+        <button id="menuToggle" class="btn btn--ghost menu" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNav">☰</button>
       </div>
     </div>
 
     <!-- Mobile drawer -->
     <div id="navBackdrop" class="backdrop" hidden></div>
-    <aside id="mobileNav" class="mobile-nav" hidden aria-label="Mobile navigation">
+    <aside id="mobileNav" class="mobile-nav" hidden aria-label="Menú móvil">
       <div class="mobile-nav__top">
-        <span class="mobile-nav__title" data-i18n="nav.menu">Menu</span>
-        <button id="menuClose" class="btn btn--ghost" type="button" aria-label="Close menu">✕</button>
+        <span class="mobile-nav__title" data-i18n="nav.menu">Menú</span>
+        <button id="menuClose" class="btn btn--ghost" type="button" aria-label="Cerrar menú">✕</button>
       </div>
-      <a href="#home" data-i18n="nav.home">Home</a>
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="cv.html" data-i18n="nav.resume">Resume</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <nav class="mobile-nav__links">
+        <a href="#home" data-i18n="nav.home">Inicio</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+        <a href="cv.html" data-i18n="nav.resume">CV</a>
+        <a href="contact.html" data-i18n="nav.contact">Contacto</a>
+      </nav>
     </aside>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="home">
+  <main id="main-content" class="container">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero__text">
-        <h1 class="title" data-i18n="hero.title">Hi, I’m Ayman Hatim Aarab</h1>
+        <div class="hero__status-badge">
+          <span class="status-pulse" aria-hidden="true"></span>
+          <span data-i18n="hero.status">Disponible para prácticas / Junior</span>
+        </div>
+
+        <h1 id="hero-title" class="title" data-i18n="hero.title">Hola, soy Ayman Hatim Aarab</h1>
 
         <p class="subline">
-          <span class="role" data-i18n="hero.role">Web Development Student</span>
+          <span class="role" data-i18n="hero.role">Desarrollador Web & Python</span>
         </p>
 
         <p class="lead" data-i18n="hero.lead">
-          I build clean web pages and Python projects while learning every day.
+          Construyo aplicaciones web modernas, accesibles y software en Python con enfoque en arquitectura limpia, rendimiento y buenas prácticas.
         </p>
 
         <div class="cta">
           <a class="btn btn--primary" href="#projects">
-            <span data-i18n="hero.ctaWork">View My Work</span>
+            <span data-i18n="hero.ctaWork">Ver Proyectos</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
-          <a class="btn" id="btnResume">
-            <span class="ic" aria-hidden="true">⬇</span>
-            <span data-i18n="hero.ctaResume">Resume</span>
+          <a class="btn btn--glass" id="btnResume" href="cv.html">
+            <span class="ic" aria-hidden="true">📄</span>
+            <span data-i18n="hero.ctaResume">Ver CV</span>
           </a>
         </div>
 
-        <!-- Social icons row (GitHub, LinkedIn, Mail, Phone) -->
-        <div class="social">
-          <a class="iconbtn" id="btnGithub" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <!-- Social icons row (GitHub, LinkedIn, Email) — Phone removed for privacy & spam protection -->
+        <div class="social" aria-label="Canales de contacto y redes">
+          <a class="iconbtn" id="btnGithub" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub de Ayman">
             <span class="iconbtn__ic" aria-hidden="true">
-              <!-- GitHub icon -->
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M12 .5C5.73.5.75 5.6.75 12c0 5.18 3.44 9.57 8.2 11.12.6.12.82-.27.82-.6 0-.3-.01-1.1-.02-2.16-3.34.75-4.04-1.65-4.04-1.65-.55-1.43-1.35-1.81-1.35-1.81-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.66-.31-5.46-1.36-5.46-6.07 0-1.34.46-2.44 1.22-3.3-.12-.31-.53-1.57.12-3.26 0 0 1-.33 3.3 1.26.96-.27 1.98-.41 3-.42 1.02.01 2.04.15 3 .42 2.3-1.59 3.3-1.26 3.3-1.26.65 1.69.24 2.95.12 3.26.76.86 1.22 1.96 1.22 3.3 0 4.72-2.8 5.76-5.47 6.07.43.38.81 1.14.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.73.83.6 4.75-1.55 8.19-5.94 8.19-11.12C23.25 5.6 18.27.5 12 .5Z"/>
               </svg>
             </span>
           </a>
 
-          <a class="iconbtn" id="btnLinkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a class="iconbtn" id="btnLinkedin" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Mohamed Aymane Hatim Aarab">
             <span class="iconbtn__ic" aria-hidden="true">
-              <!-- LinkedIn icon -->
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5S3.88 7.5 4.98 7.5 7 6.6 7 5.5 6.08 3.5 4.98 3.5ZM3.5 21h3V9h-3v12ZM9 9h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56C17.86 9 19 10.36 19 13.2V21h-3v-7c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72V21H9V9Z"/>
               </svg>
             </span>
           </a>
 
-          <a class="iconbtn" id="btnEmail" aria-label="Email">
+          <a class="iconbtn" id="btnEmail" aria-label="Enviar correo electrónico a Ayman">
             <span class="iconbtn__ic" aria-hidden="true">
-              <!-- Mail icon -->
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
-              </svg>
-            </span>
-          </a>
-
-          <a class="iconbtn" id="btnPhone" aria-label="Phone">
-            <span class="iconbtn__ic" aria-hidden="true">
-              <!-- Phone icon -->
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/>
               </svg>
             </span>
           </a>
         </div>
 
         <div class="meta">
-          <span class="pill" data-i18n="hero.location">Granada, Spain</span>
-          <span class="pill" data-i18n="hero.status">Open to internships / junior roles</span>
+          <span class="pill" data-i18n="hero.location">Granada, España</span>
         </div>
       </div>
 
+      <!-- Hero side: High visual value card without redundant text -->
       <div class="hero__side">
-        <div class="hero__photo" aria-label="Profile photo">
-          <img src="assets/img/me.jpg" alt="Photo of Ayman" />
+        <div class="hero__photo-wrapper">
+          <div class="hero__photo" aria-label="Foto de perfil de Ayman Hatim Aarab">
+            <img src="assets/img/me.jpg" alt="Retrato profesional de Ayman Hatim Aarab" width="360" height="360" loading="eager" />
+          </div>
         </div>
 
-        <div class="card">
-          <h2 class="card__title" data-i18n="hero.highlightsTitle">Highlights</h2>
-          <ul class="bullets" id="highlightsList"></ul>
+        <div class="card hero__card">
+          <div class="hero__card-header">
+            <h2 class="card__title" data-i18n="hero.cardTitle">Propuesta de Valor</h2>
+            <span class="hero__card-subtitle" data-i18n="hero.cardSubtitle">Compromiso técnico y evolución continua</span>
+          </div>
+          <div class="hero__stats-grid" id="heroStatsList">
+            <!-- Dynamic stats rendered via app.js -->
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about" aria-labelledby="about-title">
       <div class="section__head">
-        <h2 data-i18n="about.title">About</h2>
-        <p class="muted" data-i18n="about.subtitle">A quick intro and what I’m focused on.</p>
+        <h2 id="about-title" class="section__title" data-i18n="about.title">Sobre mí</h2>
+        <p class="muted section__subtitle" data-i18n="about.subtitle">Perfil técnico, enfoque de desarrollo y metas actuales.</p>
       </div>
 
       <div class="grid-2">
-        <div class="card">
+        <div class="card glass-card">
+          <h3 class="h3" data-i18n="about.title">Sobre mí</h3>
           <p class="muted" data-i18n="about.body">
-            I’m a web development student passionate about learning. I enjoy building projects with HTML, CSS, Python and SQL.
+            Soy un desarrollador enfocado en desarrollo web y lógica backend en Python. Me apasiona crear interfaces visualmente atractivas con HTML5, CSS3 y JavaScript, así como estructurar sistemas modulares con POO y bases de datos relacionales.
           </p>
         </div>
 
-        <div class="card">
-          <h3 class="h3" data-i18n="about.nowTitle">Right now</h3>
-          <ul class="bullets" id="nowList"></ul>
+        <div class="card glass-card">
+          <h3 class="h3" data-i18n="about.nowTitle">Enfoque actual</h3>
+          <ul class="bullets" id="nowList">
+            <li data-i18n="about.now1">Profundizar en JavaScript vanilla avanzado y arquitecturas frontend modulares.</li>
+            <li data-i18n="about.now2">Diseño de APIs RESTful robustas y persistencia de datos en Python.</li>
+            <li data-i18n="about.now3">Estándares de accesibilidad web (WCAG AA) y rendimiento UI.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section__head">
-        <h2 data-i18n="projects.title">Featured Projects</h2>
-        <p class="muted" data-i18n="projects.subtitle">A few projects I’m proud of.</p>
+        <h2 id="projects-title" class="section__title" data-i18n="projects.title">Proyectos Destacados</h2>
+        <p class="muted section__subtitle" data-i18n="projects.subtitle">Soluciones reales en producción, lógica de backend y herramientas de consola.</p>
       </div>
-      <div class="projects" id="projectsGrid"></div>
+
+      <!-- Rendered dynamically by app.js with rich previews, badges, and action buttons -->
+      <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <!-- SKILLS (tabs + chips like example) -->
-    <section class="section" id="skills">
+    <!-- SKILLS SECTION: Simultaneous semantic blocks (Frontend, Backend, Databases, Tools) -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="section__head section__head--center">
-        <h2 data-i18n="skills.title">Technical Skills</h2>
-        <p class="muted" data-i18n="skills.subtitle">My expertise across various technologies and tools.</p>
+        <h2 id="skills-title" class="section__title" data-i18n="skills.title">Skills Técnicas</h2>
+        <p class="muted section__subtitle" data-i18n="skills.subtitle">Competencias y stack tecnológico organizado por áreas de especialidad.</p>
       </div>
 
-      <div class="tabs card tabs-card">
-        <div class="tabs__bar" id="skillsTabs"></div>
-        <div class="tabs__panel" id="skillsChips"></div>
-      </div>
+      <!-- Dynamic Simultaneous Grid without sparse tabs -->
+      <div class="skills-grid" id="skillsGrid"></div>
     </section>
 
-    <!-- FOOTER like example -->
-    <footer class="footer2">
+    <!-- FOOTER -->
+    <footer class="footer2" role="contentinfo">
       <div class="container footer2__grid">
         <div class="footer2__col">
           <div class="footer2__brand" data-i18n="brand.fullname">Ayman Hatim Aarab</div>
-          <div class="footer2__muted" data-i18n="footer.bio">
-            Web development student focused on modern, clean websites and Python projects.
-          </div>
+          <p class="footer2__muted" data-i18n="footer.bio">
+            Desarrollador web y Python enfocado en crear soluciones de software limpias, modernas y accesibles.
+          </p>
         </div>
 
         <div class="footer2__col">
-          <div class="footer2__title" data-i18n="footer.quick">Quick Links</div>
+          <div class="footer2__title" data-i18n="footer.quick">Navegación</div>
           <div class="footer2__links">
-            <a href="#about" data-i18n="nav.about">About</a>
-            <a href="#projects" data-i18n="nav.projects">Projects</a>
-            <a href="#skills" data-i18n="nav.skills">Skills</a>
-            <a href="cv.html" data-i18n="nav.resume">Resume</a>
-            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            <a href="#about" data-i18n="nav.about">Sobre mí</a>
+            <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+            <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+            <a href="cv.html" data-i18n="nav.resume">CV</a>
+            <a href="contact.html" data-i18n="nav.contact">Contacto</a>
           </div>
         </div>
 
         <div class="footer2__col">
-          <div class="footer2__title" data-i18n="footer.connect">Connect</div>
+          <div class="footer2__title" data-i18n="footer.connect">Contacto Directo</div>
           <div class="footer2__icons">
-            <a class="iconbtn" id="footerGithub" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <span class="iconbtn__ic" aria-hidden="true">🐙</span>
+            <a class="iconbtn" id="footerGithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <span class="iconbtn__ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 .5C5.73.5.75 5.6.75 12c0 5.18 3.44 9.57 8.2 11.12.6.12.82-.27.82-.6 0-.3-.01-1.1-.02-2.16-3.34.75-4.04-1.65-4.04-1.65-.55-1.43-1.35-1.81-1.35-1.81-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.66-.31-5.46-1.36-5.46-6.07 0-1.34.46-2.44 1.22-3.3-.12-.31-.53-1.57.12-3.26 0 0 1-.33 3.3 1.26.96-.27 1.98-.41 3-.42 1.02.01 2.04.15 3 .42 2.3-1.59 3.3-1.26 3.3-1.26.65 1.69.24 2.95.12 3.26.76.86 1.22 1.96 1.22 3.3 0 4.72-2.8 5.76-5.47 6.07.43.38.81 1.14.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.73.83.6 4.75-1.55 8.19-5.94 8.19-11.12C23.25 5.6 18.27.5 12 .5Z"/>
+                </svg>
+              </span>
             </a>
-            <a class="iconbtn" id="footerLinkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <span class="iconbtn__ic" aria-hidden="true">in</span>
+            <a class="iconbtn" id="footerLinkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <span class="iconbtn__ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5S3.88 7.5 4.98 7.5 7 6.6 7 5.5 6.08 3.5 4.98 3.5ZM3.5 21h3V9h-3v12ZM9 9h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56C17.86 9 19 10.36 19 13.2V21h-3v-7c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72V21H9V9Z"/>
+                </svg>
+              </span>
             </a>
-            <a class="iconbtn" id="footerEmail" aria-label="Email">
-              <span class="iconbtn__ic" aria-hidden="true">✉</span>
-            </a>
-            <a class="iconbtn" id="footerPhone" aria-label="Phone">
-              <span class="iconbtn__ic" aria-hidden="true">☎</span>
+            <a class="iconbtn" id="footerEmail" aria-label="Correo electrónico">
+              <span class="iconbtn__ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+                </svg>
+              </span>
             </a>
           </div>
         </div>
 
         <div class="footer2__col">
-          <div class="footer2__title" data-i18n="footer.shortcuts">Shortcuts</div>
+          <div class="footer2__title" data-i18n="footer.shortcuts">Atajos</div>
           <div class="footer2__muted">
-            <div><span class="kbd">T</span> <span data-i18n="footer.shortTheme">Toggle theme</span></div>
-            <div><span class="kbd">L</span> <span data-i18n="footer.shortLang">Change language</span></div>
+            <div class="shortcut-item"><span class="kbd">T</span> <span data-i18n="footer.shortTheme">Alternar tema</span></div>
+            <div class="shortcut-item"><span class="kbd">L</span> <span data-i18n="footer.shortLang">Cambiar idioma</span></div>
           </div>
         </div>
       </div>
 
       <div class="container footer2__bottom">
-        <span class="footer2__muted">© <span id="year"></span> <span data-i18n="brand.name">Ayman</span></span>
-        <span class="footer2__muted" data-i18n="footer.built">Built with HTML/CSS/JS</span>
+        <span class="footer2__muted">© <span id="year"></span> <span data-i18n="brand.name">Ayman</span>. Todos los derechos reservados.</span>
+        <span class="footer2__muted" data-i18n="footer.built">Desarrollado con HTML5, CSS3 & JavaScript Vanilla</span>
       </div>
     </footer>
 
-    <!-- Scroll to top -->
-    <button id="toTop" class="totop" type="button" aria-label="Back to top">↑</button>
+    <!-- Scroll to top button -->
+    <button id="toTop" class="totop" type="button" aria-label="Volver arriba">↑</button>
   </main>
 
   <script src="js/content.js"></script>

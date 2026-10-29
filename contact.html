@@ -3,154 +3,172 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Ayman</title>
-  <meta name="description" content="Contact page to send a message to Ayman." />
+  <link rel="icon" href="assets/img/meico.ico" type="image/x-icon">
+  <title>Contacto — Ayman Hatim Aarab</title>
+  <meta name="description" content="Formulario y canales de contacto directo para hablar con Ayman Hatim Aarab sobre proyectos web y oportunidades." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <header class="header">
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="header" role="banner">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="dot"></span>
+      <a class="brand" href="index.html" aria-label="Ayman Hatim Aarab — Inicio">
+        <span class="dot" aria-hidden="true"></span>
         <span class="brand__text" data-i18n="brand.name">Ayman</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html#home" data-i18n="nav.home">Home</a>
-        <a href="index.html#about" data-i18n="nav.about">About</a>
-        <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
-        <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
-        <a href="cv.html" aria-current="page" data-i18n="nav.resume">Resume</a>
-        <a href="contact.html" aria-current="page" data-i18n="nav.contact">Contact</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html#home" data-i18n="nav.home">Inicio</a>
+        <a href="index.html#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="index.html#skills" data-i18n="nav.skills">Habilidades</a>
+        <a href="cv.html" data-i18n="nav.resume">CV</a>
+        <a href="contact.html" aria-current="page" data-i18n="nav.contact">Contacto</a>
       </nav>
 
       <div class="controls">
-
-        <button id="backBtn" class="btn btn--ghost" type="button" aria-label="Back">
-            ← <span class="hide-sm" data-i18n="ui.back">Back</span>
+        <button id="backBtn" class="btn btn--ghost" type="button" aria-label="Volver a la página anterior">
+          ← <span class="hide-sm" data-i18n="ui.back">Volver</span>
         </button>
 
-        <select id="langSelect" class="select" aria-label="Language">
+        <label for="langSelect" class="sr-only">Seleccionar idioma</label>
+        <select id="langSelect" class="select" aria-label="Seleccionar idioma">
           <option value="es">ES</option>
           <option value="en">EN</option>
           <option value="fr">FR</option>
         </select>
 
-        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+        <button id="themeToggle" class="btn btn--ghost theme-btn" type="button" aria-label="Alternar tema claro y oscuro">
           <span class="icon" aria-hidden="true">☾</span>
-          <span class="hide-sm" data-i18n="ui.theme">Theme</span>
+          <span class="hide-sm" data-i18n="ui.theme">Tema</span>
         </button>
 
-        <button id="menuToggle" class="btn btn--ghost menu" type="button" aria-label="Toggle menu">☰</button>
+        <button id="menuToggle" class="btn btn--ghost menu" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNav">☰</button>
       </div>
     </div>
 
     <div id="navBackdrop" class="backdrop" hidden></div>
-    <aside id="mobileNav" class="mobile-nav" hidden aria-label="Mobile navigation">
+    <aside id="mobileNav" class="mobile-nav" hidden aria-label="Menú móvil">
       <div class="mobile-nav__top">
-        <span class="mobile-nav__title" data-i18n="nav.menu">Menu</span>
-        <button id="menuClose" class="btn btn--ghost" type="button" aria-label="Close menu">✕</button>
+        <span class="mobile-nav__title" data-i18n="nav.menu">Menú</span>
+        <button id="menuClose" class="btn btn--ghost" type="button" aria-label="Cerrar menú">✕</button>
       </div>
-      <a href="index.html#home" data-i18n="nav.home">Home</a>
-      <a href="index.html#about" data-i18n="nav.about">About</a>
-      <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
-      <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
-      <a href="cv.html" data-i18n="nav.resume">Resume</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <nav class="mobile-nav__links">
+        <a href="index.html#home" data-i18n="nav.home">Inicio</a>
+        <a href="index.html#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="index.html#skills" data-i18n="nav.skills">Habilidades</a>
+        <a href="cv.html" data-i18n="nav.resume">CV</a>
+        <a href="contact.html" aria-current="page" data-i18n="nav.contact">Contacto</a>
+      </nav>
     </aside>
   </header>
 
-  <main class="container contactpage">
+  <main id="main-content" class="container contactpage">
     <div class="contactpage__head">
-      <h1 class="centerTitle" data-i18n="contact.pageTitle">Get In Touch</h1>
-      <p class="muted centerMuted" data-i18n="contact.pageSubtitle">
-        Have a project in mind or want to collaborate? I’d love to hear from you!
+      <h1 class="centerTitle section__title" data-i18n="contact.pageTitle">Contacto Profesional</h1>
+      <p class="muted centerMuted section__subtitle" data-i18n="contact.pageSubtitle">
+        ¿Tienes una propuesta, un proyecto en mente o una oportunidad de prácticas? Escríbeme y responderé a la brevedad.
       </p>
     </div>
 
     <div class="contactgrid">
-      <!-- Form -->
-      <section class="card formcard">
-        <h2 class="h3" data-i18n="contact.formTitle">Send me a message</h2>
-        <p class="muted" data-i18n="contact.formSubtitle">Fill out the form and your email app will open with the message ready.</p>
+      <!-- Asynchronous Form with full accessibility and visual feedback -->
+      <section class="card glass-card formcard" aria-labelledby="form-heading">
+        <h2 id="form-heading" class="h3" data-i18n="contact.formTitle">Envíame un mensaje</h2>
+        <p class="muted" data-i18n="contact.formSubtitle">Completa el formulario y me pondré en contacto contigo.</p>
 
-        <form id="contactForm" class="form">
-          <label class="label">
-            <span data-i18n="contact.name">Name</span>
-            <input class="input" name="name" type="text" placeholder="Mohamed Ayman" required>
+        <!-- Dynamic feedback alert for pending, success, and error states -->
+        <div id="formFeedback" class="form-feedback" hidden role="alert" aria-live="polite"></div>
+
+        <form id="contactForm" class="form" novalidate>
+          <label class="label" for="contactName">
+            <span data-i18n="contact.name">Nombre</span>
+            <input class="input" id="contactName" name="name" type="text" placeholder="Ej. Mohamed Ayman" data-i18n-placeholder="contact.namePlaceholder" required autocomplete="name">
           </label>
 
-          <label class="label">
-            <span data-i18n="contact.email">Email</span>
-            <input class="input" name="from" type="email" placeholder="mhatimaarab@gmail.com" required>
+          <label class="label" for="contactEmail">
+            <span data-i18n="contact.email">Correo electrónico</span>
+            <input class="input" id="contactEmail" name="email" type="email" placeholder="tu-email@ejemplo.com" data-i18n-placeholder="contact.emailPlaceholder" required autocomplete="email">
           </label>
 
-          <label class="label">
-            <span data-i18n="contact.subject">Subject</span>
-            <input class="input" name="subject" type="text" placeholder="Project inquiry" required>
+          <label class="label" for="contactSubject">
+            <span data-i18n="contact.subject">Asunto</span>
+            <input class="input" id="contactSubject" name="subject" type="text" placeholder="Consulta sobre un proyecto" data-i18n-placeholder="contact.subjectPlaceholder" required>
           </label>
 
-          <label class="label">
-            <span data-i18n="contact.message">Message</span>
-            <textarea class="textarea" name="message" rows="6" placeholder="I'd like to discuss a project..." required></textarea>
+          <label class="label" for="contactMessage">
+            <span data-i18n="contact.message">Mensaje</span>
+            <textarea class="textarea" id="contactMessage" name="message" rows="5" placeholder="Hola, me gustaría hablar sobre..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
           </label>
 
-          <button class="btn btn--primary btn--wide" type="submit">
-            <span data-i18n="contact.send">Send Message</span>
+          <button id="submitBtn" class="btn btn--primary btn--wide" type="submit">
+            <span class="btn__spinner" aria-hidden="true" hidden></span>
+            <span class="btn__text" data-i18n="contact.send">Enviar Mensaje</span>
             <span class="arrow" aria-hidden="true">✈</span>
           </button>
         </form>
       </section>
 
-      <!-- Connect cards -->
-      <section class="card connectcard">
-        <h2 class="h3" data-i18n="contact.connectTitle">Connect with me</h2>
-        <p class="muted" data-i18n="contact.connectSubtitle">You can also reach out directly through these channels.</p>
+      <!-- Direct Channels (Phone removed for privacy & spam protection) -->
+      <section class="card glass-card connectcard" aria-labelledby="connect-heading">
+        <h2 id="connect-heading" class="h3" data-i18n="contact.connectTitle">Canales Directos</h2>
+        <p class="muted" data-i18n="contact.connectSubtitle">También puedes comunicarte directamente a través de estos canales profesionales.</p>
 
         <div class="connectlist">
-          <a class="connectitem" id="cGithub" target="_blank" rel="noreferrer">
-            <div class="connectitem__ic">🐙</div>
+          <a class="connectitem" id="cGithub" target="_blank" rel="noopener noreferrer" aria-label="Visitar GitHub">
+            <div class="connectitem__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 .5C5.73.5.75 5.6.75 12c0 5.18 3.44 9.57 8.2 11.12.6.12.82-.27.82-.6 0-.3-.01-1.1-.02-2.16-3.34.75-4.04-1.65-4.04-1.65-.55-1.43-1.35-1.81-1.35-1.81-1.1-.78.08-.77.08-.77 1.22.09 1.86 1.29 1.86 1.29 1.08 1.9 2.83 1.35 3.52 1.03.11-.8.42-1.35.76-1.66-2.66-.31-5.46-1.36-5.46-6.07 0-1.34.46-2.44 1.22-3.3-.12-.31-.53-1.57.12-3.26 0 0 1-.33 3.3 1.26.96-.27 1.98-.41 3-.42 1.02.01 2.04.15 3 .42 2.3-1.59 3.3-1.26 3.3-1.26.65 1.69.24 2.95.12 3.26.76.86 1.22 1.96 1.22 3.3 0 4.72-2.8 5.76-5.47 6.07.43.38.81 1.14.81 2.29 0 1.65-.02 2.98-.02 3.39 0 .33.22.73.83.6 4.75-1.55 8.19-5.94 8.19-11.12C23.25 5.6 18.27.5 12 .5Z"/>
+              </svg>
+            </div>
             <div>
               <div class="connectitem__title">GitHub</div>
               <div class="connectitem__muted" id="cGithubText">github.com/exo-tic-33</div>
             </div>
           </a>
 
-          <a class="connectitem" id="cLinkedin" target="_blank" rel="noreferrer">
-            <div class="connectitem__ic">in</div>
+          <a class="connectitem" id="cLinkedin" target="_blank" rel="noopener noreferrer" aria-label="Visitar LinkedIn">
+            <div class="connectitem__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5S3.88 7.5 4.98 7.5 7 6.6 7 5.5 6.08 3.5 4.98 3.5ZM3.5 21h3V9h-3v12ZM9 9h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56C17.86 9 19 10.36 19 13.2V21h-3v-7c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.83-2.7 3.72V21H9V9Z"/>
+              </svg>
+            </div>
             <div>
               <div class="connectitem__title">LinkedIn</div>
-              <div class="connectitem__muted" id="cLinkedinText">linkedin.com</div>
+              <div class="connectitem__muted" id="cLinkedinText">linkedin.com/in/mohamed-aymane-hatim-aarab</div>
             </div>
           </a>
 
-          <a class="connectitem" id="cEmail">
-            <div class="connectitem__ic">✉</div>
+          <a class="connectitem" id="cEmail" aria-label="Copiar o enviar correo a mhatimaarab@gmail.com">
+            <div class="connectitem__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+              </svg>
+            </div>
             <div>
               <div class="connectitem__title">Email</div>
               <div class="connectitem__muted" id="cEmailText">mhatimaarab@gmail.com</div>
             </div>
           </a>
-
-          <a class="connectitem" id="cPhone">
-            <div class="connectitem__ic">☎</div>
-            <div>
-              <div class="connectitem__title" data-i18n="contact.phone">Phone</div>
-              <div class="connectitem__muted" id="cPhoneText">+34 614 396 660</div>
-            </div>
-          </a>
         </div>
       </section>
     </div>
-    <footer class="footer2">
+
+    <footer class="footer2" role="contentinfo">
       <div class="container footer2__bottom">
-        <span class="footer2__muted">© <span id="year"></span> <span data-i18n="brand.name">Ayman</span></span>
-        <span class="footer2__muted" data-i18n="footer.built">Built with HTML/CSS/JS</span>
+        <span class="footer2__muted">© <span id="year"></span> <span data-i18n="brand.name">Ayman</span>. Todos los derechos reservados.</span>
+        <span class="footer2__muted" data-i18n="footer.built">Desarrollado con HTML5, CSS3 & JavaScript Vanilla</span>
       </div>
     </footer>
   </main>
-    
 
   <script src="js/content.js"></script>
   <script src="js/app.js"></script>
